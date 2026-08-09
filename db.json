@@ -1,0 +1,184 @@
+{
+  "customers": [
+    {
+      "id": "cust_001",
+      "name": "Ahmed Khan",
+      "email": "ahmed@gmail.com",
+      "password": "ahmed123",
+      "accountNumber": "ACC-1001",
+      "balance": 10000005332000,
+      "status": "active",
+      "role": "customer"
+    },
+    {
+      "id": "cust_002",
+      "name": "Sara Malik",
+      "email": "sara@gmail.com",
+      "password": "sara123",
+      "accountNumber": "ACC-1002",
+      "balance": 210000,
+      "status": "active",
+      "role": "customer"
+    }
+  ],
+  "employees": [
+    {
+      "id": "emp_001",
+      "name": "Ali Raza",
+      "email": "ali@bank.com",
+      "password": "ali123",
+      "salary": 60000,
+      "role": "employee",
+      "status": "active"
+    },
+    {
+      "id": "emp_002",
+      "name": "Fatima Noor",
+      "email": "fatima@bank.com",
+      "password": "fatima123",
+      "salary": 55000,
+      "role": "employee",
+      "status": "active"
+    }
+  ],
+  "managers": [
+    {
+      "id": "mgr_001",
+      "name": "Usman Malik",
+      "email": "manager@bank.com",
+      "password": "manager123",
+      "role": "manager"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "txn_001",
+      "customerId": "cust_001",
+      "customerName": "Ahmed Khan",
+      "type": "deposit",
+      "amount": 50000,
+      "status": "approved",
+      "date": "2026-02-20",
+      "processedBy": "emp_001"
+    },
+    {
+      "id": "txn_002",
+      "customerId": "cust_001",
+      "customerName": "Ahmed Khan",
+      "type": "withdraw",
+      "amount": 20000,
+      "status": "approved",
+      "date": "2026-02-21",
+      "processedBy": "mgr_001"
+    },
+    {
+      "id": "txn_003",
+      "customerId": "cust_002",
+      "customerName": "Sara Malik",
+      "type": "deposit",
+      "amount": 30000,
+      "status": "approved",
+      "date": "2026-02-22",
+      "processedBy": "mgr_001"
+    }
+  ],
+  "loans": [
+    {
+      "id": "loan_001",
+      "customerId": "cust_001",
+      "customerName": "Ahmed Khan",
+      "amount": 800000,
+      "purpose": "Business Expansion",
+      "duration": "12",
+      "notes": "",
+      "status": "approved",
+      "approvedBy": "employee",
+      "approvedById": "emp_001",
+      "date": "2026-02-15"
+    },
+    {
+      "id": "loan_002",
+      "customerId": "cust_001",
+      "customerName": "Ahmed Khan",
+      "amount": 1500000,
+      "purpose": "Property Purchase",
+      "duration": "24",
+      "notes": "Urgent requirement",
+      "status": "pending",
+      "approvedBy": null,
+      "approvedById": null,
+      "date": "2026-02-21"
+    },
+    {
+      "id": "loan_003",
+      "customerId": "cust_002",
+      "customerName": "Sara Malik",
+      "amount": 500000,
+      "purpose": "Education",
+      "duration": "18",
+      "notes": "",
+      "status": "approved",
+      "approvedBy": "employee",
+      "approvedById": "emp_001",
+      "date": "2026-02-22"
+    },
+    {
+      "id": "BoRiDA9sdnw",
+      "customerId": "cust_001",
+      "customerName": "Ahmed Khan",
+      "amount": 100000,
+      "purpose": "fertilizer ",
+      "duration": "20000",
+      "notes": " bhai da da na yaar  gf ko date  pa la ka jana hn janu ",
+      "status": "approved",
+      "approvedBy": "employee",
+      "approvedById": "emp_001",
+      "date": "2026-08-09"
+    },
+    {
+      "id": "V0RYxaz0EPA",
+      "customerId": "cust_001",
+      "customerName": "Ahmed Khan",
+      "amount": 10000000000000,
+      "purpose": "car showrooms ",
+      "duration": "1000",
+      "notes": "MUJI CAR CHIYA SPORT BHAI ",
+      "status": "approved",
+      "approvedBy": "manager",
+      "approvedById": "mgr_001",
+      "date": "2026-08-09"
+    },
+    {
+      "id": "ER8LtnLOWUw",
+      "customerId": "cust_001",
+      "customerName": "Ahmed Khan",
+      "amount": 5000000,
+      "purpose": "carshowroom ",
+      "duration": "10",
+      "notes": "bhai new carli hn bachi ko date pa la ka jana hn",
+      "status": "approved",
+      "approvedBy": "manager",
+      "approvedById": "mgr_001",
+      "date": "2026-08-09"
+    },
+    {
+      "id": "UOGAd6JVXfA",
+      "customerId": "cust_001",
+      "customerName": "Ahmed Khan",
+      "amount": 2000,
+      "purpose": "gandmar wana ",
+      "duration": "2",
+      "notes": "humza ki ",
+      "status": "approved",
+      "approvedBy": "employee",
+      "approvedById": "emp_001",
+      "date": "2026-08-09"
+    }
+  ],
+  "bankSummary": {
+    "id": 1,
+    "totalBalance": 15000000,
+    "totalLoansIssued": 6500000
+  },
+  "$schema": "./node_modules/json-server/schema.json"
+}
