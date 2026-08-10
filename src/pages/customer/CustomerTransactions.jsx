@@ -13,7 +13,7 @@ const typeBadge = (t) => {
   return <span className={`badge ${map[t] || 'badge-info'}`}>{t}</span>
 }
 
-export default function CustomerTransactions() {
+export default function CustomerTransactions({ onNavigate }) {
   const { user } = useSelector((s) => s.auth)
   const [txns, setTxns]       = useState([])
   const [loading, setLoading] = useState(true)
@@ -29,6 +29,10 @@ export default function CustomerTransactions() {
     <>
       <div className="page-header">
         <div><h2>Transaction History</h2><p>All your past and pending transactions</p></div>
+        <button className="btn btn-outline btn-sm" onClick={() => onNavigate('dashboard')}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="16" height="16"><polyline points="15 18 9 12 15 6"/></svg>
+          Back
+        </button>
       </div>
       <div className="card">
         <div className="card-header"><span className="card-title">Transactions ({txns.length})</span></div>

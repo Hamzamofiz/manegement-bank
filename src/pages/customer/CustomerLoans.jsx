@@ -9,7 +9,7 @@ const statusBadge = (s) => {
   return <span className="badge badge-warning">Pending</span>
 }
 
-export default function CustomerLoans() {
+export default function CustomerLoans({ onNavigate }) {
   const { user } = useSelector((s) => s.auth)
   const [loans, setLoans]     = useState([])
   const [loading, setLoading] = useState(true)
@@ -52,10 +52,16 @@ export default function CustomerLoans() {
     <>
       <div className="page-header">
         <div><h2>My Loans</h2><p>View loan history and submit new requests</p></div>
-        <button className="btn btn-primary" onClick={() => setShowForm(true)}>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          Request Loan
-        </button>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8, alignItems: 'flex-end' }}>
+          <button className="btn btn-primary" onClick={() => setShowForm(true)}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Request Loan
+          </button>
+          <button className="btn btn-outline btn-sm" onClick={() => onNavigate('dashboard')}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="16" height="16"><polyline points="15 18 9 12 15 6"/></svg>
+            Back
+          </button>
+        </div>
       </div>
 
       <div className="card">

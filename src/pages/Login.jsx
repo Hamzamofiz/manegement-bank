@@ -47,7 +47,7 @@ export default function Login() {
         const cred = await signInWithEmailAndPassword(auth, emailLower, password)
         uid = cred.user.uid
       } catch (authErr) {
-        if (authErr.code === 'auth/user-not-found' || authErr.code === 'auth/invalid-credential') {
+        if (authErr.code === 'auth/user-not-found') {
           // User nahi hai - create karo
           const cred = await createUserWithEmailAndPassword(auth, emailLower, password)
           uid = cred.user.uid
@@ -82,6 +82,8 @@ export default function Login() {
     } catch (err) {
       const msgs = {
         'auth/wrong-password':         'Password galat hai.',
+        'auth/invalid-credential':     'Email ya password galat hai.',
+        'auth/user-not-found':         'Ye email registered nahi hai.',
         'auth/too-many-requests':      'Zyada attempts. Thodi der baad try karo.',
         'auth/network-request-failed': 'Internet connection check karo.',
         'auth/operation-not-allowed':  'Firebase mein Email/Password enable karo!',

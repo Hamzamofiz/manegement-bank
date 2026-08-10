@@ -20,8 +20,8 @@ export default function CustomerApp() {
 
   const renderPage = () => {
     if (page === 'dashboard') return <CustomerDashboard onNavigate={setPage} />
-    if (page === 'transactions') return <CustomerTransactions />
-    if (page === 'loans' || page === 'request-loan') return <CustomerLoans />
+    if (page === 'transactions') return <CustomerTransactions onNavigate={setPage} />
+    if (page === 'loans' || page === 'request-loan') return <CustomerLoans onNavigate={setPage} />
     if (['deposit', 'withdraw', 'donation'].includes(page)) return <RequestForm type={page} onBack={() => setPage('dashboard')} />
     return <CustomerDashboard onNavigate={setPage} />
   }
