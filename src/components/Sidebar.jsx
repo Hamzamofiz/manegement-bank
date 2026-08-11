@@ -35,7 +35,7 @@ const navConfig = {
   ],
 }
 
-export default function Sidebar({ activePage, onNavigate }) {
+export default function Sidebar({ activePage, onNavigate, isOpen, onClose }) {
   const dispatch = useDispatch()
   const { user, role } = useSelector((s) => s.auth)
   const navItems = navConfig[role] || []
@@ -47,10 +47,13 @@ export default function Sidebar({ activePage, onNavigate }) {
   }
 
   return (
-    <aside className="sidebar">
-      <div className="sidebar-logo">
+    <aside className={`sidebar ${isOpen ? 'open' : ''}`}>
+      <div className="sidebar-logo" style={{ position: 'relative' }}>
         <div className="bank-name">Enterprise Bank</div>
         <div className="bank-sub">Management System</div>
+        <button className="sidebar-close" onClick={onClose}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
       </div>
 
       <div className="sidebar-user">
